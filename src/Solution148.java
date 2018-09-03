@@ -9,9 +9,6 @@ public class Solution148 {
         }
     }
 
-
-
-
     static ListNode merge(ListNode l1,ListNode l2) {
 
         ListNode dummy= new ListNode(-1,null);

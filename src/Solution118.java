@@ -1,5 +1,5 @@
 import java.util.*;
-public class Solutjon118 {
+public class Solution118 {
 
     public static List<List<Integer>> generate(int numRows) {
 

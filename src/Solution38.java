@@ -1,4 +1,4 @@
-public class Soluton38 {
+public class Solution38 {
 
     public static String countAndSay (int n) {
 
