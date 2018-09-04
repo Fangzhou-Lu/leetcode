@@ -4,7 +4,7 @@ public class Solution47 {
 
 
     static void permuteUniqueDFS(int[] nums,int level, int[] visited , Stack<Integer> out, List<List<Integer>> res) {
-        if(level == nums.length) res.add( new LinkedList<>(out));
+        if(level >= nums.length) res.add( new ArrayList<>(out));
         else {
             for(int i=0;i<nums.length;i++) {
                 if(visited[i]==0) {
@@ -24,12 +24,13 @@ public class Solution47 {
         List<List<Integer>> res= new ArrayList<>();
         int[] visited = new int[nums.length];
         Stack<Integer> out= new Stack<>();
+        Arrays.sort(nums);
         permuteUniqueDFS(nums,0,visited,out,res);
         return res;
     }
 
     public static void main (String[] args) {
-        int[] num= {1,1,2};
+        int[] num= {3,3,0,3};
         List<List<Integer>> res= permuteUnique(num);
         for(List<Integer> l : res) {
             for(Integer i: l) {

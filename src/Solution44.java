@@ -2,7 +2,7 @@ public class Solution44 {
 
     public static  boolean isMatch(String s, String p) {
 
-      int strStart=0,patStart=0,strCur=0,patCur=0;
+      int strStart=-1,patStart=-1,strCur=0,patCur=0;
 
       while(strCur <s.length()   ) {
           if( patCur < p.length() && ( s.charAt(strCur)==p.charAt(patCur) || p.charAt(patCur)=='?')) {
@@ -11,7 +11,7 @@ public class Solution44 {
           } else if ( patCur < p.length() && p.charAt(patCur)=='*') {
               patStart=patCur++;
               strStart=strCur;
-          } else if (patStart!=0) {
+          } else if (patStart!=-1) {
               patCur=patStart+1;
               strCur=++strStart;
           } else return false;
@@ -26,7 +26,10 @@ public class Solution44 {
     public static void main(String[] args) {
 
 //        boolean res = isMatch("aa", "a*");
-        boolean res = isMatch("aa", "*");
+
+        String s = "acdcb";
+       String  p = "a*c?b";
+        boolean res = isMatch(s, p);
         System.out.println(res);
     }
 }

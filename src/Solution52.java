@@ -1,14 +1,13 @@
 import java.util.*;
 public class Solution52 {
 
-    static int cnt=0;
+//    static int cnt=0;
 
-    static void solveNQueensDFS(int[] pos, int row , Integer res) {
+    static void solveNQueensDFS(int[] pos, int row , int[] res) {
 
         int n = pos.length;
         if(row ==n) {
-//           res++;
-            cnt++;
+           res[0]++;
         } else {
             for(int col=0;col<n;col++) {
                 if(isValid(pos,row,col)) {
@@ -30,17 +29,19 @@ public class Solution52 {
 
     public static  int totalNQueens(int n) {
 
-        int res=0;
-
+        int[] res= new int[1];
         int[] pos= new int[n];
+
+        for(int i=0;i<n;i++) pos[i]=-1;
+
         solveNQueensDFS(pos,0,res);
-        return res;
+        return res[0];
     }
 
     public static void main (String[] args) {
 
         Integer res =totalNQueens(4);
-        System.out.println(cnt);
+        System.out.println(res);
 
 
 }
